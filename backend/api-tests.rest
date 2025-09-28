@@ -1,0 +1,97 @@
+### ===========================================
+### SMART HABIT TRACKER API TESTS
+### ===========================================
+
+### 1. REGISTER A NEW USER
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+  "name": "Test User",
+  "email": "test@example.com",
+  "password": "123456"
+}
+
+### 2. LOGIN USER
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "omar@example.com",
+  "password": "123456"
+}
+
+### ===========================================
+### HABITS API (All require authentication)
+### ===========================================
+
+### 3. CREATE A NEW HABIT
+POST http://localhost:5000/api/habits
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZDkyNGQ3N2UzMDY0ZjVjZThlNzAzOSIsImlhdCI6MTc1OTA2MTMwMiwiZXhwIjoxNzYxNjUzMzAyfQ.d9nnY0mGcY-ddaegGgwwKCIJ3JwesTbx2tfK2PrRRjw
+
+{
+  "title": "Drink Water",
+  "description": "Drink 8 glasses of water daily",
+  "frequency": "daily"
+}
+
+### 4. GET ALL HABITS
+GET http://localhost:5000/api/habits
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZDkyNGQ3N2UzMDY0ZjVjZThlNzAzOSIsImlhdCI6MTc1OTA2MTMwMiwiZXhwIjoxNzYxNjUzMzAyfQ.d9nnY0mGcY-ddaegGgwwKCIJ3JwesTbx2tfK2PrRRjw
+
+### 5. UPDATE A HABIT
+PUT http://localhost:5000/api/habits/68d927029df2ee52da1c8ca1
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZDkyNGQ3N2UzMDY0ZjVjZThlNzAzOSIsImlhdCI6MTc1OTA2MTMwMiwiZXhwIjoxNzYxNjUzMzAyfQ.d9nnY0mGcY-ddaegGgwwKCIJ3JwesTbx2tfK2PrRRjw
+
+{
+ "title": "eat healthy",
+  "description": "eat healthy food daily like fruits and vegetables",
+  "frequency": "daily",
+  "streakCount": 2,
+  "points": 10
+}
+
+### 6. DELETE A HABIT
+DELETE http://localhost:5000/api/habits/68d927029df2ee52da1c8ca1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZDkyNGQ3N2UzMDY0ZjVjZThlNzAzOSIsImlhdCI6MTc1OTA2MTMwMiwiZXhwIjoxNzYxNjUzMzAyfQ.d9nnY0mGcY-ddaegGgwwKCIJ3JwesTbx2tfK2PrRRjw
+
+### ===========================================
+### PROGRESS API (All require authentication)
+### ===========================================
+
+### 7. ADD PROGRESS TO A HABIT
+POST http://localhost:5000/api/progress
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZDkyNGQ3N2UzMDY0ZjVjZThlNzAzOSIsImlhdCI6MTc1OTA2MTMwMiwiZXhwIjoxNzYxNjUzMzAyfQ.d9nnY0mGcY-ddaegGgwwKCIJ3JwesTbx2tfK2PrRRjw
+
+{
+  "habitId": "68d927029df2ee52da1c8ca1",
+  "value": 5,
+  "date": "2025-09-28",
+  "notes": "Did well today!"
+}
+
+### 8. GET PROGRESS FOR A HABIT
+GET http://localhost:5000/api/progress/68d927029df2ee52da1c8ca1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZDkyNGQ3N2UzMDY0ZjVjZThlNzAzOSIsImlhdCI6MTc1OTA2MTMwMiwiZXhwIjoxNzYxNjUzMzAyfQ.d9nnY0mGcY-ddaegGgwwKCIJ3JwesTbx2tfK2PrRRjw
+
+### ===========================================
+### ANALYTICS API (All require authentication)
+### ===========================================
+
+### 9. GET OVERVIEW ANALYTICS
+GET http://localhost:5000/api/analytics/overview
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZDkyNGQ3N2UzMDY0ZjVjZThlNzAzOSIsImlhdCI6MTc1OTA2MTMwMiwiZXhwIjoxNzYxNjUzMzAyfQ.d9nnY0mGcY-ddaegGgwwKCIJ3JwesTbx2tfK2PrRRjw
+
+### 10. GET HABIT-SPECIFIC ANALYTICS
+GET http://localhost:5000/api/analytics/68d927029df2ee52da1c8ca1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZDkyNGQ3N2UzMDY0ZjVjZThlNzAzOSIsImlhdCI6MTc1OTA2MTMwMiwiZXhwIjoxNzYxNjUzMzAyfQ.d9nnY0mGcY-ddaegGgwwKCIJ3JwesTbx2tfK2PrRRjw
+
+### ===========================================
+### BASIC SERVER TEST
+### ===========================================
+
+### 11. TEST SERVER IS RUNNING
+GET http://localhost:5000/
