@@ -68,7 +68,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4ZDkyNGQ3N
 
 {
   "habitId": "68d927029df2ee52da1c8ca1",
-  "value": 5,
+  "value": 15,
   "date": "2025-09-28",
   "notes": "Did well today!"
 }

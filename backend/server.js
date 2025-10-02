@@ -10,15 +10,19 @@ import analyticsRoutes from "./routes/analyticsRoutes.js";
 import habitRoutes from "./routes/habitRoutes.js";
 import errorHandler from "./middleware/errorMiddleware.js";
 
-
 dotenv.config();
 
-const PORT = process.env.PORT || 5000;  
+const PORT = process.env.PORT || 5000;
 
 const app = express();
 
 // Middleware
-app.use(cors());
+// 🚨 MODIFICATION: Explicitly allow the frontend origin
+app.use(cors({
+    origin: 'http://localhost:3000', // Your React app's URL
+    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed methods
+    credentials: true // Crucial if you used cookies (though we use JWT header)
+}));
 app.use(express.json());
 
 // Routes
@@ -47,4 +51,3 @@ async function startServer() {
 }
 
 startServer();
-
