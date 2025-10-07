@@ -1,5 +1,6 @@
 import React from 'react';
 import { ArrowTrendingUpIcon } from '@heroicons/react/24/outline';
+import { motion } from 'framer-motion';
 
 const ProgressChart = ({ data, title = "Progress Overview" }) => {
   // Sample data for demonstration

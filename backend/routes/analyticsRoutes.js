@@ -8,6 +8,6 @@ import {
 const router = express.Router();
 
 router.get("/overview", protect, getOverview);
-router.get("/:habitId", protect, getHabitAnalytics);
+router.get("/habit/:habitId", protect, getHabitAnalytics);
 
 export default router;

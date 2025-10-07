@@ -1,5 +1,6 @@
 import React from 'react';
 import { TrophyIcon, StarIcon, FireIcon, FlagIcon } from '@heroicons/react/24/solid';
+import { motion } from 'framer-motion';
 
 const Badge = ({ type, title, description, earned = false, progress = 0 }) => {
   const getBadgeConfig = (badgeType) => {

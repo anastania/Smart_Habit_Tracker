@@ -7,7 +7,8 @@ const habitSchema = new mongoose.Schema({
   frequency: { type: String, enum: ['daily', 'weekly', 'monthly'], default: 'daily' },
   startDate: { type: Date, default: Date.now },
   streakCount: { type: Number, default: 0 },
-  points: { type: Number, default: 0 }
+  points: { type: Number, default: 0 },
+  isCompletedToday: { type: Boolean, default: false } 
 });
 
 export default mongoose.model('Habit', habitSchema);

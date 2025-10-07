@@ -1,6 +1,56 @@
+@import '@fontsource/inter/400.css';
+@import '@fontsource/inter/500.css';
+@import '@fontsource/inter/600.css';
+@import '@fontsource/poppins/600.css';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-light-bg dark:bg-dark-bg text-light-text dark:text-dark-text transition-colors duration-300;
+  }
+
+  h1, h2 {
+    @apply font-heading font-semibold;
+  }
+
+  h3, h4 {
+    @apply font-sans font-medium;
+  }
+
+  /* Scrollbar Styling */
+  ::-webkit-scrollbar {
+    @apply w-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-light-bg dark:bg-dark-bg;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-light-primary dark:bg-dark-primary rounded-lg;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply font-sans font-semibold px-4 py-2 rounded-lg
+           bg-light-primary dark:bg-dark-primary
+           text-white
+           transform transition-all duration-300
+           hover:scale-105
+           dark:hover:shadow-[0_0_15px_rgba(0,229,255,0.3)];
+  }
+
+  .card {
+    @apply bg-light-card dark:bg-dark-card
+           rounded-2xl p-6
+           shadow-light dark:shadow-dark
+           transition-all duration-300;
+  }
+}
 
 body {
   margin: 0;
