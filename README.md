@@ -10,20 +10,20 @@ Une application web **moderne et intuitive** de suivi d'habitudes, développée 
 
 ### Frontend
 
-| Caractéristique | Détails | Emojis |
-| :--- | :--- | :--- |
-| **Architecture React Moderne** | Hooks personnalisés, Context API pour l'état global, React Router v6. | ⚛️🎣 |
-| **UI/UX Avancée** | Interface adaptative (Desktop & Mobile), Mode sombre/clair avec ThemeProvider. Animations fluides avec Framer Motion. | 📱🌙✨ |
-| **Design System Modulaire** | Design System personnalisé avec **TailwindCSS**, Composants réutilisables. | 🎨🧩 |
-| **Performance** | Code splitting, lazy loading, Optimisation des rendus (`useMemo`, `useCallback`), Gestion optimisée des assets. | ⚡️🚀 |
+| Caractéristique | Détails |
+| :--- | :--- |
+| **Architecture React Moderne** | Hooks personnalisés, Context API pour l'état global, React Router v6. |
+| **UI/UX Avancée** | Interface adaptative (Desktop & Mobile), Mode sombre/clair avec ThemeProvider. Animations fluides avec Framer Motion. |
+| **Design System Modulaire** | Design System personnalisé avec **TailwindCSS**, Composants réutilisables. |
+| **Performance** | Code splitting, lazy loading, Optimisation des rendus (`useMemo`, `useCallback`), Gestion optimisée des assets. | 
 
 ### Backend
 
-| Caractéristique | Détails | Emojis |
-| :--- | :--- | :--- |
-| **Architecture REST API** | Architecture **MVC**, Middlewares personnalisés, Gestion des erreurs centralisée, Documentation Swagger/OpenAPI. | 🌐🏛️📄 |
-| **Sécurité** | Authentification **JWT**, Protection XSS/CSRF, Validation des données avec Joi, Hachage sécurisé des mots de passe. | 🔒🔑🛡️ |
-| **Base de Données** | Schémas **MongoDB** optimisés, Indexation pour les performances, Agrégations complexes pour les analytics, Transactions. | 🍃🧠📊 |
+| Caractéristique | Détails |
+| :--- | :--- |
+| **Architecture REST API** | Architecture **MVC**, Middlewares personnalisés, Gestion des erreurs centralisée, Documentation Swagger/OpenAPI. |
+| **Sécurité** | Authentification **JWT**, Protection XSS/CSRF, Validation des données avec Joi, Hachage sécurisé des mots de passe. |
+| **Base de Données** | Schémas **MongoDB** optimisés, Indexation pour les performances, Agrégations complexes pour les analytics, Transactions. |
 
 ---
 
